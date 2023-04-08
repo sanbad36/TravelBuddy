@@ -1,11 +1,12 @@
 var mongoose = require("mongoose");
+const Ngo = require("./Ngo");
 var Schema = mongoose.Schema;
 
 var dataSchema = new Schema(
 	{
 		ngoID: {
 			type: Schema.Types.ObjectId,
-			ref: "ngos",
+			ref: Ngo,
 		},
 		programID: {
 			type: Schema.Types.ObjectId,

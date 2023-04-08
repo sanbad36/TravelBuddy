@@ -225,7 +225,7 @@ const HomePage = () => {
         justifyContent="space-evenly"
       >
         <Box flexBasis={isNonMobileScreens ? '55%' : undefined}>
-          <LoadScript googleMapsApiKey="AIzaSyC_2ABFZTAwaDLCgP5DKpNM_xrCJvX66Nc">
+          <LoadScript googleMapsApiKey="AIzaSyBjdBum6ISQigCtmDcJvt4YvmljYt-rgWk">
             <GoogleMap mapContainerStyle={mapStyles} zoom={4} center={defaultCenter}>
               <MarkerF position={defaultCenter} />
               {locationData.map((location) => (

@@ -38,6 +38,7 @@ const Statistics = (props) => {
         </div>
         <div className="charts">
           <Chart
+            chartData={props.chartData1}
             aspect={2 / 1}
             title="Total tours in last six months"
             type={BarChart}
@@ -49,6 +50,7 @@ const Statistics = (props) => {
           <Featured />
 
           <Chart
+            chartData={props.chartData1}
             aspect={2 / 1}
             title="Total tours in last six months"
             type={AreaChart}

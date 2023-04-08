@@ -37,16 +37,16 @@ const Navbar = () => {
     setCounter((prev) => prev + 1);
   };
 
-  useEffect(() => {
-    if (counter === 0) {
-      var addScript = document.createElement('script');
-      addScript.setAttribute('type', 'text/javascript');
-      addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
-      document.body.appendChild(addScript);
-      window.googleTranslateElementInit = googleTranslateElementInit;
-    }
-    setCounter((prev) => prev + 1);
-  }, []);
+  // useEffect(() => {
+  //   if (counter === 0) {
+  //     var addScript = document.createElement('script');
+  //     addScript.setAttribute('type', 'text/javascript');
+  //     addScript.setAttribute('src', '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
+  //     document.body.appendChild(addScript);
+  //     window.googleTranslateElementInit = googleTranslateElementInit;
+  //   }
+  //   setCounter((prev) => prev + 1);
+  // }, []);
 
   // const id = JSON.parse(localStorage.getItem('profile')).id;
   const id = useSelector((state) => state.user._id);

@@ -1,11 +1,86 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Data
+ *   description: Datas API
+ * /data/all:
+ *  get:
+ *     summary: Creating Datas
+ *     tags: [Data]
+ *     responses:
+ *       200:
+ *         description: The list of the datas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ *  
+ * /data/{dataid}:
+ *    get:
+ *     summary: Fetching Datas from an id
+ *     tags: [Data]
+ *     responses:
+ *       200:
+ *         description: The list of the datas for an id
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ *    post:
+ *      summary: Updating existing data
+ *      tags: [Data]
+ *      requestBody:
+ *              description: Updating existing data
+ *              required: true
+ *              content:
+ *                application/json:
+ *                    schema:
+ *                      $ref: '#/components/schemas/Book'
+ *      responses:
+ *        200:
+ *          description: The Existing Data updated successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: string
+ *                items:
+ *                  $ref: '#/components/schemas/Book'
+ * /data/add:
+ *    post:
+ *      summary: Adding new data
+ *      tags: [Data]
+ *      requestBody:
+ *              description: Adding new data
+ *              required: true
+ *              content:
+ *                application/json:
+ *                    schema:
+ *                      $ref: '#/components/schemas/Book'
+ *      responses:
+ *        200:
+ *          description: The New Data posted successfully
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: string
+ *                items:
+ *                  $ref: '#/components/schemas/Book'
+ * 
+ */
+
+
 const express = require("express");
 const router = express.Router();
 
 const Data = require("../models/Data");
 
 router.get("/all", async (req, res) => {
-	Data.find({})
-		.populate("ngoID")
+	Data.find()
+	    .populate("ngoID")
 		.populate("programID")
 		.populate("userID")
 		.exec((err, data) => {

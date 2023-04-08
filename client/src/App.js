@@ -38,6 +38,7 @@ function App() {
   // Alan
   const navigate = useNavigate();
   const alanKey = 'b2d9701a39c56f75626449da674777452e956eca572e1d8b807a3e2338fdd0dc/stage';
+  // const alanKey = '9945293841bada83da738adf4a55f93a2e956eca572e1d8b807a3e2338fdd0dc/stage';
   useEffect(() => {
     alanBtn({
       key: alanKey,
@@ -55,7 +56,7 @@ function App() {
         }
       }
     });
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="app">

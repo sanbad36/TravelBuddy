@@ -1,3 +1,25 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Enrollment
+ *   description: Enrollments API
+ * /enrollment/assign:
+ *  get:
+ *     summary: Assigning New Enrollments
+ *     tags: [Enrollment]
+ *     responses:
+ *       200:
+ *         description: Assigning New Enrollments
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ *  
+ */
+
+
 const express = require("express");
 const router = express.Router();
 

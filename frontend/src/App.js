@@ -709,7 +709,11 @@ function App() {
             <Route path="notification" element={<Notification />} />
             <Route
               path="Statistics"
-              element={<Statistics chartData={chartData2} />}
+              element={<Statistics chartData={chartData2} 
+                  data1={5}
+                  chartData1={totalProgram1}
+                  program1Details1={program1Details}
+              />}
             />
             <Route path="allblogs" element={<Blogs />} />
             <Route path="assignWorkers" element={<Workers />} />

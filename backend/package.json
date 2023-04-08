@@ -29,6 +29,8 @@
     "razorpay": "^2.8.1",
     "shortid": "^2.2.16",
     "socket.io": "^2.2.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
     "twilio": "^3.77.2"
   }
 }
