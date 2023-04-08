@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "406768316617",
+    "firebase_url": "https://travel-buddy-16b12-default-rtdb.firebaseio.com",
+    "project_id": "travel-buddy-16b12",
+    "storage_bucket": "travel-buddy-16b12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406768316617:android:079d77abdcf9502688dd18",
+        "android_client_info": {
+          "package_name": "in.stackunderflow.travelbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406768316617-62gccuj4cjhp4nhin6krsvjlrf00tj9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.stackunderflow.travelbuddy",
+            "certificate_hash": "fce3ccad1033e8a9f95bf2cb9a992c7d7461772e"
+          }
+        },
+        {
+          "client_id": "406768316617-c9pah18vlejb44mc981mo5nu52fddims.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDpsMzNQpIH4jgQ6d4zMiLnjKDnqgy1wI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406768316617-c9pah18vlejb44mc981mo5nu52fddims.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

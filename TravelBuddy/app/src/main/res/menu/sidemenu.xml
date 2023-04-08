@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item android:id="@+id/lead_trip"
+            android:title="Lead a Trip"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/join_trip"
+            android:title="Join a Trip"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/nearby_users"
+            android:title="People near me"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/explore"
+            android:title="Explore"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/chat"
+            android:title="Chat"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/plan_meetup"
+            android:title="Plan Meetup"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/community"
+            android:title="Community"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/safety"
+            android:title="Safety"
+            tools:ignore="HardcodedText" />
+        <item android:id="@+id/logout"
+            android:title="Log Out"
+            tools:ignore="HardcodedText" />
+    </group>
+
+</menu>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Travel Buddy</string>
+    <string name="navigation_open">open menu</string>
+    <string name="navigation_close">close menu</string>
+</resources>
