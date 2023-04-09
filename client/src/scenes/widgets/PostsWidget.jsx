@@ -64,7 +64,7 @@ const PostsWidget = ({ userId, isProfile = false, activeForum }) => {
   if (forumData.length === 0) {
     return (
       <div>
-        <h1>{!activeForum ? (isProfile ? 'No Posts' : "Click a location to view it's posts") : 'No Posts'}</h1>
+        <h1 data-aos="fade-up">{!activeForum ? (isProfile ? 'No Posts' : "Click a location to view it's posts") : 'No Posts'}</h1>
       </div>
     );
   } else {

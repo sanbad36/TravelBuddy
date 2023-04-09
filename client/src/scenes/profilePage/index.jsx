@@ -54,7 +54,7 @@ const ProfilePage = () => {
         margin="-6% 0 0 0"
         justifyContent="center"
       >
-        <Box flexBasis={isNonMobileScreens ? '26%' : undefined}>
+        <Box flexBasis={isNonMobileScreens ? '26%' : undefined} data-aos="fade-right">
           <Box display="flex" justifyContent="center">
             <UserImage sx={{ marginBottom: '2rem' }} size="175px" image={user.picturePath} />
           </Box>
@@ -102,6 +102,7 @@ const ProfilePage = () => {
           margin="6% 0 0 0"
           flexBasis={isNonMobileScreens ? '42%' : undefined}
           mt={isNonMobileScreens ? undefined : '2rem'}
+          data-aos="fade-left"
         >
           <Typography variant="h4" fontWeight="bold" mb="1rem">
             Visited Countries

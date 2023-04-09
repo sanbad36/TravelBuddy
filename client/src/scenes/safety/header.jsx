@@ -29,6 +29,7 @@ const Header = () => {
         alignItems: 'center',
     }}
     className={classes.banner}
+    data-aos="fade-up"
     >
       <Typography variant="h1" component="h1" gutterBottom>
         Find a Travel Buddy
@@ -46,6 +47,7 @@ const Header = () => {
         margin: '0 auto',
         p:5,
     }}
+    data-aos="fade-up"
     >
         <Box>
             <Typography variant="h3" component="p">

@@ -224,7 +224,7 @@ const HomePage = () => {
         gap="0.5rem"
         justifyContent="space-evenly"
       >
-        <Box flexBasis={isNonMobileScreens ? '55%' : undefined}>
+        <Box flexBasis={isNonMobileScreens ? '55%' : undefined} data-aos="fade-right">
           <LoadScript googleMapsApiKey="AIzaSyBjdBum6ISQigCtmDcJvt4YvmljYt-rgWk">
             <GoogleMap mapContainerStyle={mapStyles} zoom={4} center={defaultCenter}>
               <MarkerF position={defaultCenter} />
@@ -253,7 +253,7 @@ const HomePage = () => {
             </GoogleMap>
           </LoadScript>
         </Box>
-        <Box flexBasis={isNonMobileScreens ? '40%' : undefined} mt={isNonMobileScreens ? undefined : '2rem'}>
+        <Box flexBasis={isNonMobileScreens ? '40%' : undefined} mt={isNonMobileScreens ? undefined : '2rem'} data-aos="fade-left">
           <MyPostWidget picturePath={picturePath} />
           <PostsWidget userId={_id} activeForum={activeForum} />
         </Box>

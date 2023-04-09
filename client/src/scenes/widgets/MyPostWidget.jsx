@@ -68,7 +68,7 @@ const MyPostWidget = ({ picturePath }) => {
 
   return (
     <WidgetWrapper>
-      <FlexBetween gap="1.5rem">
+      <FlexBetween gap="1.5rem" data-aos="fade-up">
         <UserImage image={picturePath} />
         <Box
           sx={{
@@ -78,6 +78,7 @@ const MyPostWidget = ({ picturePath }) => {
             justifyContent: "space-between",
             alignItems: "center",
           }}
+          data-aos="fade-up"
         >
           <InputBase
             placeholder="What's on your mind..."

@@ -5,6 +5,7 @@ const Chatbot = () => {
     (function (d, m) {
       var kommunicateSettings = {
         appId: '1a8bbcf66035e56b7e6cd9f5570094d8d',
+        // "appId":"295155f575fa93df56e842730982eb0f",
         popupWidget: true,
         automaticChatOpenOnNavigation: true
       };

@@ -30,6 +30,7 @@ const Header = () => {
           alignItems: 'center'
         }}
         className={classes.banner}
+        data-aos="fade-up"
       ></Box>
       {/* <Box
         sx={{

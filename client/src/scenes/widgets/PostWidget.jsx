@@ -48,7 +48,7 @@ const PostWidget = ({
   };
 
   return (
-    <WidgetWrapper m="2rem 0">
+    <WidgetWrapper m="2rem 0" data-aos="fade-up">
       <Friend friendId={postUserId} name={name} subtitle={location} userPicturePath={userPicturePath} />
       <Typography color={main} sx={{ mt: '1rem' }}>
         {description}
@@ -86,7 +86,7 @@ const PostWidget = ({
       {isComments && (
         <Box mt="0.5rem">
           {comments.map((comment, i) => (
-            <Box key={`${name}-${i}`}>
+            <Box key={`${name}-${i}`}  data-aos="fade-up">
               <Divider />
               <Typography sx={{ color: main, m: '0.5rem 0', pl: '1rem' }}>{comment}</Typography>
             </Box>

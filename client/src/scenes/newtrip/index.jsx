@@ -17,6 +17,7 @@ const NewTrip = () => {
           backgroundRepeat: "no-repeat",
           height: "100vh",
         }}
+        data-aos="fade-up"
         >
         <Form />
         </Box>

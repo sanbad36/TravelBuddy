@@ -12,11 +12,13 @@ import {
 } from '@mui/material';
 import { Search, Message, DarkMode, LightMode, Notifications, Help, Menu, Close } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import { setMode, setLogout } from 'state';
+import { setMode, setLogout, setBookings } from 'state';
 import { useNavigate } from 'react-router-dom';
 import FlexBetween from 'components/FlexBetween';
 import { useLocation } from 'react-router-dom';
 import TranslationComp from 'translation/TranslationComp';
+import axios from 'axios';
+
 
 const Navbar = () => {
   const location = useLocation();
@@ -87,7 +89,11 @@ const Navbar = () => {
     {
       name: 'Safety',
       path: '/safety'
-    }
+    },
+    // {
+    //   name: 'My Bookings',
+    //   path: '/mybookings'
+    // }
   ];
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
@@ -103,6 +109,19 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
+
+  const getBookings = async() => {
+    const config = {
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        // 'Authorization': `Bearer ${JSON.parse(JSON.stringify(token))}`,
+       }
+  }
+  const response = await axios.post(`http://localhost:3001/payments/all`,{userid:user._id},config);
+  dispatch(setBookings(response.data))
+  console.log(response.data);
+  };
 
   return (
     <div style={{ overflowX: 'scroll', backgroundColor: '#dce1e8' }}>
@@ -142,7 +161,12 @@ const Navbar = () => {
           <FlexBetween gap="2rem">
             {navItems.map((item, index) => {
               return (
-                <MenuItem onClick={() => navigate(item.path)}>
+                <MenuItem onClick={() =>{
+                  if(item.path==="/mybookings"){
+                    getBookings()
+                  }
+                  navigate(item.path)
+                }}>
                   <Typography fontWeight="bold" fontSize="1.15rem">
                     {item.name}
                   </Typography>

@@ -82,15 +82,15 @@ const MeetUp = () => {
         gap="0.5rem"
         justifyContent="center"
       >
-        <Box flexBasis={isNonMobileScreens ? '26%' : undefined}>
+        <Box flexBasis={isNonMobileScreens ? '26%' : undefined} data-aos="fade-right">
           <Filters userId={_id} picturePath={picturePath} users={users} setUsers={setUsers}/>
         </Box>
-        <Box flexBasis={isNonMobileScreens ? '60%' : undefined} mt={isNonMobileScreens ? undefined : '2rem'}>
+        <Box flexBasis={isNonMobileScreens ? '60%' : undefined} mt={isNonMobileScreens ? undefined : '2rem'} data-aos="fade-left">
           {/* <MyPostWidget picturePath={picturePath} /> */}
           {/* <JobPostsWidget userId={_id} /> */}
           <Grid container spacing={4}>
             {users.reverse().map((item) => (
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4} data-aos="fade-up">
                 <UserCard
                   name={`${item.firstName} ${item.lastName}`}
                   image={item.picturePath}

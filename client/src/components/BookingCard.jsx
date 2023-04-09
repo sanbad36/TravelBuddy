@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'clsx';
 import { makeStyles } from '@mui/styles';
-import StripeCheckout from 'react-stripe-checkout';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -12,7 +11,6 @@ import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded';
 import { usePushingGutterStyles } from '@mui-treasury/styles/gutter/pushing';
 import TripImage from '../assets/trip.avif';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -45,16 +43,12 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const TripCard = React.memo(function ReviewCard({
-  id,
-  image,
-  title,
-  price,
-  desc,
-  dates,
-  location,
-  rating,
-  description,
+export const BookingCard = React.memo(function ReviewCard({
+   id,
+   userID,
+   postID,
+   BookingAmount,
+   TripBookedAt,
   ...props
 }) {
   const styles = useStyles();
@@ -63,26 +57,13 @@ export const TripCard = React.memo(function ReviewCard({
   const gutterStyles = usePushingGutterStyles({ firstExcluded: true });
   const user = useSelector(state=>state.user)
   const token = useSelector(state=>state.token)
-  let postId = id;
   console.log(typeof(token));
-  const tokenHandler = async(token1) => {
-    console.log(token1)
-    const config = {
-      headers:{
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${JSON.parse(JSON.stringify(token))}`,
-       }
-    }
-    const response = await axios.post("http://localhost:3001/payments/bookings",{token1,price,user,postId},config)
-    console.log(response.data);
-}
   return (
     <Card elevation={0} className={styles.root}>
       <CardMedia
         classes={mediaStyles}
         image={
-          image
+          postID.image
           // 'http://localhost:3001/assets/trip.avif'
           // 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80'
         }
@@ -92,14 +73,14 @@ export const TripCard = React.memo(function ReviewCard({
           <FavoriteIcon />
         </IconButton> */}
         <h3 className={styles.title} style={{ textAlign: 'center' }}>
-          {title}
+          {postID.title}
         </h3>
         <Box color={'grey.500'} display={'flex'} justifyContent="center" mb={1}>
           <LocationOnIcon className={styles.locationIcon} />
-          <span>{location}</span>
+          <span>{postID.location}</span>
         </Box>
         <Typography color={'textSecondary'} variant={'body2'}>
-          {desc.slice(0, 100)}
+          {postID.desc.slice(0, 100)}
           ...{' '}
         </Typography>
         <Box mt={2} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
@@ -125,7 +106,7 @@ export const TripCard = React.memo(function ReviewCard({
         <Box mt={2} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
           <Box display={'flex'} alignItems={'center'}>
             <Typography variant={'h6'} color={'textPrimary'}>
-              ₹ {price}
+              ₹ {postID.price}
             </Typography>
             <Typography component={'span'} variant={'body2'} color={'textSecondary'}>
               /person
@@ -136,24 +117,24 @@ export const TripCard = React.memo(function ReviewCard({
           <Box display={'flex'} alignItems={'center'}>
             Dates:
             <Typography ml="5px" mt="3px" component={'span'} variant={'h6'} color={'textSecondary'}>
-              {dates}
+              {postID.dates}
             </Typography>
           </Box>
         </Box>
         <Box diaplay="flex" justifyContent={'space-between'} alignItems={'center'}>
           <Box justifyContent="center">
-          <StripeCheckout stripeKey="pk_test_51MarKISJbAJP59qD6NxAgHskLoPFb1PHLjB2ZQ91SYO2dwiivgP91B07dgXzCEhdHqTB58sXI4Z5GtR6yXXMYRVN00rWHvsrLr"
-      amount={Number(price)*100}
-      shippingAddress={false}
-      billingAddress={false}
-      currency="INR"
-      token={tokenHandler}
-      >
           <Button variant="contained" color="primary" style={{ marginTop: '10px' }} onClick={()=>{
             }}>
-              Pay Now
+              Paid
             </Button>
-      </StripeCheckout>
+          </Box>
+        </Box>
+        <Box mt={2} display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
+          <Box display={'flex'} alignItems={'center'}>
+            Dates:
+            <Typography ml="5px" mt="3px" component={'span'} variant={'h6'} color={'textSecondary'}>
+              Trip Booked At : {TripBookedAt}
+            </Typography>
           </Box>
         </Box>
       </CardContent>
@@ -161,4 +142,4 @@ export const TripCard = React.memo(function ReviewCard({
   );
 });
 
-export default TripCard;
+export default BookingCard;

@@ -26,10 +26,14 @@ import ExpenseTracker from 'scenes/expense/ExpenseTracker';
 import alanBtn from '@alan-ai/alan-sdk-web';
 import Contest from 'scenes/contest';
 import Chatbot from 'components/Chatbot';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import MyBookings from 'scenes/mybookings';
 
 export const LanguageContext = React.createContext();
 
 function App() {
+  AOS.init()
   const [language, setLanguage] = useState('english');
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -64,25 +68,26 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={!isAuth ? <LoginPage /> : <Navigate to="/home" />} />
             <Route path="/hero" element={<LandingPage />} />
             <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} />
-            <Route path="/profile/:userId" element={<ProfilePage />} />
-            <Route path="/trips" element={<TravelPage />} />
-            <Route path="/chatgpt" element={<Chat />} />
-            <Route path="/chat" element={<Chat />} />
+            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
+            <Route path="/trips" element={isAuth ? <TravelPage /> : <Navigate to="/" />} />
+            <Route path="/chatgpt" element={isAuth ? <Chat /> : <Navigate to="/" />} />
+            <Route path="/chat" element={isAuth ? <Chat /> : <Navigate to="/"/>} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/explore" element={<Shorts />} />
-            <Route path="/newtrip" element={<NewTrip />} />
-            <Route path="/shorts" element={<Explore />} />
-            <Route path="/meetup" element={<MeetUp />} />
-            <Route path="/safety" element={<Safety />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/contest" element={<Contest />} />
-            <Route path="/maps" element={<WorldMap />} />
-            <Route path="/video-chat" element={<JoinRoom />} />
-            <Route path="/video/:id" element={<Video />} />
-            <Route path="/expense" element={<ExpenseTracker />} />
+            <Route path="/explore" element={isAuth ? <Shorts /> : <Navigate to="/"/>} />
+            <Route path="/newtrip" element={isAuth ? <NewTrip /> : <Navigate to="/"/>} />
+            <Route path="/shorts" element={isAuth ? <Explore /> : <Navigate to="/"/>} />
+            <Route path="/meetup" element={isAuth ? <MeetUp /> : <Navigate to="/"/>} />
+            <Route path="/safety" element={isAuth ? <Safety /> : <Navigate to="/"/>} />
+            <Route path="/community" element={isAuth ? <Community /> : <Navigate to="/"/>} />
+            <Route path="/contest" element={isAuth ? <Contest /> : <Navigate to="/"/>} />
+            <Route path="/maps" element={isAuth ? <WorldMap /> : <Navigate to="/"/>} />
+            <Route path="/video-chat" element={isAuth ? <JoinRoom /> : <Navigate to="/"/>} />
+            <Route path="/video/:id" element={isAuth ? <Video /> : <Navigate to="/"/>} />
+            <Route path="/expense" element={isAuth ? <ExpenseTracker /> : <Navigate to="/"/>} />
+            <Route path="/mybookings" element={isAuth ? <MyBookings /> : <Navigate to="/"/>} />
           </Routes>
           <Chatbot />
         </ThemeProvider>

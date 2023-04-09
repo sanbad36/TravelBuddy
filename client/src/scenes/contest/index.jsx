@@ -54,12 +54,12 @@ const Contest = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Navbar />
-      <h1 style={{textAlign:'center'}}>Sunset Views for the week</h1>
-      <Box sx={{ width: '100%', mt: 4 }}>
+      <h1 style={{textAlign:'center'}} data-aos="fade-up">Sunset Views for the week</h1>
+      <Box sx={{ width: '100%', mt: 4 }} data-aos="fade-up">
         <Grid container spacing={5}>
           {communityData.map((item) => (
-            <Grid item spacing={3} xs={12} sm={6} md={4}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '345px', width: '100%' }}>
+            <Grid item spacing={3} xs={12} sm={6} md={4} data-aos="fade-up">
+              <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '345px', width: '100%' }} data-aos="fade-up">
                 <img src={item.image} alt="" height={250} width={250} />
                 <Typography variant="h6">{item.title}</Typography>
                 <Typography variant="body2">{item.description}</Typography>
