@@ -51,7 +51,7 @@ Payment Gateway: Stripe API.
 
 - Clone the repository
   ```
-  git clone https://github.com/raj2729/FSS_CSHTN-08.git
+  git clone https://github.com/adityaganji889/Travel-Buddy-Website.git
   ```
 - Install NPM packages for Backend Application
 
