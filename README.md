@@ -28,6 +28,7 @@ A project that helps solo travellers travel together with people having similar 
 Mobile app plus point: 
 - Bluetooth connectivity with the bluetooth enabled devices in surrounding.
 - In future to enable chatting with bluetooth connection.
+
 ## Tech Stack Used:
 
 - Front-End (Web): Reactjs, Redux, Material-UI.
@@ -51,7 +52,7 @@ Mobile app plus point:
 
 - Clone the repository
   ```
-  git clone https://github.com/adityaganji889/Travel-Buddy-Website.git
+  git clone https://github.com/adityaganji889/Travel-Buddy.git
   ```
 - Install NPM packages for Backend Application
 
