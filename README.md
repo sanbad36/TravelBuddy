@@ -30,11 +30,11 @@ Mobile app plus point:
 - In future to enable chatting with bluetooth connection.
 ## Tech Stack Used:
 
-Front-End (Web): Reactjs, Redux, Material-UI.
-Front-End (App): Android.
-Back-End: Nodejs, Expressjs, Mongoose, JWT, Nodemailer, Kommunicate-IO-ChatBot-API, ChatGPT-API, Alan-AI-Voice-Assistant-API, Cloudinary-API, Swagger-UI.
-DataBase: MongoDb.
-Payment Gateway: Stripe API.
+- Front-End (Web): Reactjs, Redux, Material-UI.
+- Front-End (App): Android.
+- Back-End: Nodejs, Expressjs, Mongoose, JWT, Nodemailer, Kommunicate-IO-ChatBot-API, ChatGPT-API, Alan-AI-Voice-Assistant-API,     Cloudinary-API, Swagger-UI.
+- DataBase: MongoDb.
+- Payment Gateway: Stripe API.
 
 <!-- GETTING STARTED -->
 
