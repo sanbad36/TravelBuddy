@@ -1,3 +1,44 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Program
+ *   description: Program API
+ * /program/add:
+ *    post:
+ *      summary: Adding a new program.
+ *      tags: [Program]
+ *      requestBody:
+ *              description: Added New Program.
+ *              required: true
+ *              content:
+ *                application/json:
+ *                    schema:
+ *                      $ref: '#/components/schemas/Book'
+ *      responses:
+ *        200:
+ *          description: The New Program is added successfully.
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: string
+ *                items:
+ *                  $ref: '#/components/schemas/Book'
+ * /program/all:
+ *    get:
+ *     summary: Fetching All Programs.
+ *     tags: [Program]
+ *     responses:
+ *       200:
+ *         description: All the programs fetched successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ * 
+ */
+
 const express = require("express");
 const router = express.Router();
 

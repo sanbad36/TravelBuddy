@@ -42,7 +42,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Travel Buddy Express API with Swagger",
+      title: "Travel Buddy Admin Dashboard Express API with Swagger",
       version: "0.1.0",
       description:
         "This is a simple CRUD API application made with Express and documented with Swagger",

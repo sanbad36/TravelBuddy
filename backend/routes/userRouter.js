@@ -1,3 +1,45 @@
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: User API
+ * /user/add:
+ *    post:
+ *      summary: Adding a new user.
+ *      tags: [User]
+ *      requestBody:
+ *              description: Added New user.
+ *              required: true
+ *              content:
+ *                application/json:
+ *                    schema:
+ *                      $ref: '#/components/schemas/Book'
+ *      responses:
+ *        200:
+ *          description: The New User is added successfully.
+ *          content:
+ *            application/json:
+ *              schema:
+ *                type: string
+ *                items:
+ *                  $ref: '#/components/schemas/Book'
+ * /user/all:
+ *    get:
+ *     summary: Fetching All Users.
+ *     tags: [User]
+ *     responses:
+ *       200:
+ *         description: All the users are fetched successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Book'
+ * 
+ */
+
+
 const express = require("express");
 const router = express.Router();
 

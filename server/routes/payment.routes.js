@@ -1,3 +1,48 @@
+/**
+ * @swagger
+ * tags:
+ *   name: Bookings
+ *   description: The Bookings managing API
+ * /payments/bookings:
+ *   post:
+ *     summary: Creating Bookings
+ *     tags: [Bookings]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Book'
+ *     responses:
+ *       200:
+ *         description: The Booking is Created.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Book'
+ *       500:
+ *         description: Some server error
+ * /payments/all:
+ *   post:
+ *    summary: Getting all the bookings of a user
+ *    tags: [Bookings]
+ *    requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Book'
+ *     responses:
+ *       200:
+ *         description: The Bookings of a user are fetched successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Book'
+ *       500:
+ *         description: Some server error
+ */
+
 import express from 'express';
 import Razorpay from 'razorpay';
 import { getFeedPosts, getUserPosts, likePost } from '../controllers/posts.controller.js';
