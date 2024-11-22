@@ -3,8 +3,10 @@ import { Container, TextField, Button, Grid, Paper, Typography } from '@mui/mate
 import { styled } from '@mui/material/styles';
 import Navbar from './navbar';
 import { Configuration, OpenAIApi } from 'openai';
-import { useSpeechSynthesis } from 'react-speech-kit';
+// import { useSpeechSynthesis } from 'react-speech-kit';
+function useSpeechSynthesis() {
 
+}
 
 const ChatContainer = styled(Container)(({ theme }) => ({
   marginTop: theme.spacing(4)

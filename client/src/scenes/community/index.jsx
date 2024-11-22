@@ -6,8 +6,10 @@ import Filters from '../widgets/meetFilter';
 import UserCard from '../../components/UserCard';
 import { useSelector } from 'react-redux';
 import community from '../../assets/community.avif';
-import { useSpeechSynthesis } from 'react-speech-kit';
+// import { useSpeechSynthesis } from 'react-speech-kit';
+function useSpeechSynthesis() {
 
+}
 const MeetUp = () => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
   const { _id, picturePath } = useSelector((state) => state.user);

@@ -3,7 +3,10 @@ import { ActionRequest, AudioActionResponse, ChatController, FileActionResponse,
 import React, { useState } from 'react';
 import Navbar from './navbar';
 import { Configuration, OpenAIApi } from 'openai';
-import { useSpeechSynthesis } from 'react-speech-kit';
+// import { useSpeechSynthesis } from 'react-speech-kit';
+function useSpeechSynthesis() {
+
+}
 
 const muiTheme = createTheme({
   palette: {
